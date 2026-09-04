@@ -16,4 +16,9 @@ def legg_til(key,val):
     telefonbok[key] = val
     print(f"Lagt til {key} med nummer {val}")
 
-def 
+def søk(navn):
+    for key in telefonbok:
+        if navn.lower() == key.lower():
+            print("Person {key} er i ordboken")
+    print("Personen er ikke i ordboken")
+
