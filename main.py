@@ -12,3 +12,8 @@ def vis_alle():
         print(f"{key}: {value}")
     print("----------------------")
 
+def legg_til(key,val):
+    telefonbok[key] = val
+    print(f"Lagt til {key} med nummer {val}")
+
+def 
