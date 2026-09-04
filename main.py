@@ -6,5 +6,9 @@ telefonbok = {
     "Eilert":46527597
 }
 
-
+def vis_alle():
+    print("Telefonbok: ----------")
+    for key,value in telefonbok.items():
+        print(f"{key}: {value}")
+    print("----------------------")
 
