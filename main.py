@@ -13,7 +13,18 @@ def vis_alle():
         print(f"{key}: {value}")
     print("----------------------")
 
+def user_exists(key,val):
+    for Key,Item in telefonbok.items():
+        if Key.lower() == key.lower():
+            if Item == int(val):
+                return True
+    return False
+
 def legg_til(key,val):
+    exists = user_exists(key,val)
+    if exists:
+        print("Denne personen er allerede i ordboken med samme nummer. \n")
+        return
     telefonbok[key] = val
     print(f"Lagt til {key} med nummer {val}")
 
@@ -28,18 +39,18 @@ def handleInput(inpt: str):
     if inpt == "søk":
         usrInput = input("Skriv inn navnet på personen du vil søke etter: ")
         søk(usrInput)
-    if inpt == "vis":
+    elif inpt == "vis":
         vis_alle()
-    if inpt == "legg til ny":
+    elif inpt == "legg til ny":
         key = input("Skriv inn navnet på personen du vil legge inn: ")
         value = input("Skriv inn nummeret til personen du vil legge inn: ")
         legg_til(key,value)
-    if inpt == "Avslutt":
+    elif inpt == "avslutt":
         print("Avslutter programmet. ")
         run = False
     else:
-        print("Kommando ikke gjennkjent")
+        print("Kommando ikke gjennkjent. \n")
 
 while run:
-    user_input = input("Skriv inn kommando: Søk, Vis, Legg til ny, Avslutt")
+    user_input = input("Skriv inn kommando: Søk, Vis, Legg til ny, Avslutt: \n")
     handleInput(user_input)
